@@ -3,7 +3,7 @@ import {ListPOKEMONS} from './mock-pokemon-lists';
 import {pokemon} from './pokemon'
 @Component({
   selector: 'app-root',
-  template: `<h1>{{title}}!</h1>`
+  templateUrl: `./app.component.html`
 })
 export class AppComponent implements OnInit{
   //title = 'ng-pokemon-app';
