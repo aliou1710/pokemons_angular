@@ -28,4 +28,13 @@
     />
     <!-- ? : si le pokemonselected n'est pas defini, il ne vas pas generer d'erreur-->
     <p>vous avez selectionner le pokemon: {{Pokemonselected?.name}}</p>
-  
+    <p></p>
+    <p><b>utilisation de = NgIf (ex: *ngif)</b></p>
+    <input  #inputfour (keyup.enter)="selectPokemon(inputfour.value)" type="number" 
+    />
+    <p *ngIf="Pokemonselected"> vous avez selectionné le pokemon: {{Pokemonselected.name}}</p>
+    <!--ça n'existe pas -->
+    <p *ngIf="!Pokemonselected" >Aucun pokémon n a été trouvé pour le  moment</p>
+    <!--ngfor-->
+    <p><b>*ngFor:</b> c'est pour boucler</p>
+    <p *ngFor="let pokemon__ of pokemonlist"> {{pokemon__.name}}</p>
