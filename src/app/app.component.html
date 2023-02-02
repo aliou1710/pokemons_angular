@@ -1,5 +1,5 @@
 <h1>Liste des pokemons et autres</h1>
-    <p>{{pokemonlist[0].name}}</p>
+    <!-- <p (click)="selectPokemon(pokemonlist[0])"> {{pokemonlist[0].name}}</p>-->
     <p>{{pokemonlist[1].name}}</p>
     <p>{{pokemonlist[2].name}}</p>
     <p>{{pokemonlist[3].name}}</p>
@@ -11,5 +11,21 @@
     <p>{{pokemonlist[9].name}}</p>
     <p>{{pokemonlist[10].name}}</p>
     <p>{{pokemonlist[11].name}}</p>
-    
+    <!--on veut recuperer le numero qu'on encode dans l'input pour pouvoir afficher un des pokemon
+    <input type="text" placeholder="value" id="inputvalue" 
+    (click)="selectPokemon($event)"/>-->
+    <p>une autre maniere de recuperer la valeur avec une variable declarée dans le template html ici</p>
+    <input #inputs (keyup)="0" type="text" placeholder="input here"  
+    />
+    <p>{{inputs.value}}</p>
+    <p>une autre maniere de recuperation de la valeur pour afficher le nom d'un pokemon</p>
+    <input  #inputsecond (keyup)="selectPokemon(inputsecond.value)" type="number" 
+    />
+    <!-- ? : si le pokemonselected n'est pas defini, il ne vas pas generer d'erreur-->
+    <p>vous avez selectionner le pokemon: {{Pokemonselected?.name}}</p>
+    <p>comment utiliser keyup.enter | donc là , il va afficher quelques choses lorsque le user tapera sur la touche enter </p>
+    <input  #inputthird (keyup.enter)="selectPokemon(inputthird.value)" type="number" 
+    />
+    <!-- ? : si le pokemonselected n'est pas defini, il ne vas pas generer d'erreur-->
+    <p>vous avez selectionner le pokemon: {{Pokemonselected?.name}}</p>
   
