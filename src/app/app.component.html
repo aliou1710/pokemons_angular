@@ -40,20 +40,33 @@
      <p><b>*ngFor:</b> c'est pour boucler</p> 
      <p *ngFor="let pokemon__ of pokemonlist"> {{pokemon__.name}}</p> -->
      <p> </p>
-     <!-- on met display:felx : pour aligner en ligne , puis flex-wrap: wrap pourque les éléments passent à la ligne suivante lorsqu'ils ne tiennent plus sur la ligne actuelle -->
-    <div style="display: flex;flex-wrap: wrap;">
-    <ul class="collection" style="margin-left: 20px;" *ngFor="let pokemon__ of pokemonlist" >
-        
-        <li class="collection-item avatar"  style=" width: 33.33%;">
-        
-            <img src={{pokemon__.picture}} alt="" class="circle">
-          
-          <p><b>{{pokemon__.name}}</b> <br>
-            {{pokemon__.created}} <br>
-            (CEST)
-          </p>
-
+     <div class ="container" >
+        <div class ="row" >
+           <!-- la row definit par materialize est de 12 de large  par ligne -->
+            <!-- je mets col m4 => parceque 12/4 =3 cvd 3 par ligne  -->
+             <!-- s6 : cvd si l'ecran est petit s6 =>12/6=2 =>cvd 2 par ligne  -->
+           <div *ngFor="let pokemon__ of pokemonlist" class="col m4 s6" > 
+               <div class="card horizontal">
+                    
+                   <div class="card-image">
+                        <img src={{pokemon__.picture}} />
+                    </div>  
+                    
+                    <div class="card-stacked">
+                        <div class="car-content">
+                           <p><b>{{pokemon__.name}}</b></p>
+                           <p>{{pokemon__.created}}</p>
+                           <p>(CEST)</p>
+                        </div>
+                   </div>
+                   
+                   
+               </div>
+              
+          </div> 
        
-        </li>
-    </ul>
+       </div>
+    
     </div>
+
+  
