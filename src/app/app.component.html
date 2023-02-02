@@ -36,5 +36,24 @@
     <!--ça n'existe pas -->
     <p *ngIf="!Pokemonselected" >Aucun pokémon n a été trouvé pour le  moment</p>
     <!--ngfor-->
-    <p><b>*ngFor:</b> c'est pour boucler</p>
-    <p *ngFor="let pokemon__ of pokemonlist"> {{pokemon__.name}}</p>
+
+     <p><b>*ngFor:</b> c'est pour boucler</p> 
+     <p *ngFor="let pokemon__ of pokemonlist"> {{pokemon__.name}}</p> -->
+     <p> </p>
+     <!-- on met display:felx : pour aligner en ligne , puis flex-wrap: wrap pourque les éléments passent à la ligne suivante lorsqu'ils ne tiennent plus sur la ligne actuelle -->
+    <div style="display: flex;flex-wrap: wrap;">
+    <ul class="collection" style="margin-left: 20px;" *ngFor="let pokemon__ of pokemonlist" >
+        
+        <li class="collection-item avatar"  style=" width: 33.33%;">
+        
+            <img src={{pokemon__.picture}} alt="" class="circle">
+          
+          <p><b>{{pokemon__.name}}</b> <br>
+            {{pokemon__.created}} <br>
+            (CEST)
+          </p>
+
+       
+        </li>
+    </ul>
+    </div>
