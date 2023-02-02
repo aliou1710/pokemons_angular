@@ -1,0 +1,36 @@
+<!-- utilisation de materialize pour centrer => class="center" -->
+<h1 class="center">Listes des pokemons</h1>
+<div class ="container" >
+    <div class ="row" >
+       <!-- la row definit par materialize est de 12 de large  par ligne -->
+        <!-- je mets col m4 => parceque 12/4 =3 cvd 3 par ligne  -->
+         <!-- s6 : cvd si l'ecran est petit s6 =>12/6=2 =>cvd 2 par ligne  -->
+       <div *ngFor='let pokemon__ of pokemonlist' class="col s6 m4 " > 
+           <div class="card horizontal" (click)="selectPokemonDirective(pokemon__)"  pkmonappBorderCard="green">
+                
+               <div class="card-image">
+                    <img src={{pokemon__.picture}} />
+                </div>  
+                
+                <div class="card-stacked">
+                    <div class="car-content">
+                       <p><b>{{pokemon__.name}}</b></p>
+                       <!--le format de date va changer  -->
+                       <p><small>{{pokemon__.created | date:"dd/MM/yyyy"  }}</small></p>
+                       <!-- comibnaison de pipe : attention: le preier a etre executer est date puis uppercas -->
+                       <!-- <p><small>{{pokemon__.created | date | uppercase }}</small></p> -->
+                       <!-- pokemonTypeColor est le nom du selector du pipe crée (pokeom-type-color.pipe) -->
+                        <span *ngFor="let type of pokemon__.types" class="{{type | pokemonTypeColor}}">{{type}}</span>
+                       <!-- <p>(CEST)</p> -->
+                    </div>
+               </div>
+               
+               
+           </div>
+          
+      </div> 
+   
+   </div>
+
+</div>
+
