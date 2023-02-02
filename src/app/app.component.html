@@ -55,8 +55,13 @@
                     <div class="card-stacked">
                         <div class="car-content">
                            <p><b>{{pokemon__.name}}</b></p>
-                           <p><small>{{pokemon__.created}}</small></p>
-                           <p>(CEST)</p>
+                           <!--le format de date va changer  -->
+                           <p><small>{{pokemon__.created | date:"dd/MM/yyyy"  }}</small></p>
+                           <!-- comibnaison de pipe : attention: le preier a etre executer est date puis uppercas -->
+                           <!-- <p><small>{{pokemon__.created | date | uppercase }}</small></p> -->
+                           <!-- pokemonTypeColor est le nom du selector du pipe crée (pokeom-type-color.pipe) -->
+                            <span *ngFor="let type of pokemon__.types" class="{{type | pokemonTypeColor}}">{{type}}</span>
+                           <!-- <p>(CEST)</p> -->
                         </div>
                    </div>
                    
