@@ -37,6 +37,25 @@ export class AppComponent implements OnInit{
       //undefined
       console.log(`vous avez demander un pokemon qui n'existe pas`);
       this.Pokemonselected = pokemonunit;
+      
+    }
+  
+  }
+
+  selectPokemonDirective(pokemon__ : pokemon){
+    const index = Number(pokemon__.id);
+    //on veut chercher un pokemon qui a cet id dans la liste, s'il n'existe pas il renvoie undefined
+    const pokemonunit: pokemon|undefined = this.pokemonlist.find(pokemon_=>pokemon_.id==index);
+    this.Pokemonselected = this.pokemonlist[index];
+    if(pokemonunit){
+      //pokemon
+      console.log(`seconde methode : On a cliqué sur le pokemon ${pokemonunit.name}`);
+      this.Pokemonselected = pokemonunit;
+    }else{
+      //undefined
+      console.log(`vous avez demander un pokemon qui n'existe pas`);
+      this.Pokemonselected = pokemonunit;
+      
     }
   
   }
