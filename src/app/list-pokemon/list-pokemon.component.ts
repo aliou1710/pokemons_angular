@@ -1,6 +1,7 @@
 import { Component ,OnInit} from '@angular/core';
 import { pokemon } from '../pokemon';
 import {ListPOKEMONS} from '../mock-pokemon-lists';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-list-pokemon',
   templateUrl: './list-pokemon.component.html',
@@ -10,6 +11,8 @@ import {ListPOKEMONS} from '../mock-pokemon-lists';
 export class ListPokemonComponent {
   //title = 'ng-pokemon-app';
   title = 'List de pokemons';
+
+  constructor(private router : Router){}
   //tableau de pokemon
   pokemonlist : pokemon[] = ListPOKEMONS
  //pokemonlists=['pikachu','barbaroza','noah'];
@@ -60,5 +63,10 @@ export class ListPokemonComponent {
       
     }
   
+  }
+
+  goToDetailPokemons(pokemon___ : pokemon){
+    
+    this.router.navigate(['/pokemon/',pokemon___.id]);
   }
 }

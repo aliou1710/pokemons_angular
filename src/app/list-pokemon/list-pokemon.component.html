@@ -6,7 +6,7 @@
         <!-- je mets col m4 => parceque 12/4 =3 cvd 3 par ligne  -->
          <!-- s6 : cvd si l'ecran est petit s6 =>12/6=2 =>cvd 2 par ligne  -->
        <div *ngFor='let pokemon__ of pokemonlist' class="col s6 m4 " > 
-           <div class="card horizontal" (click)="selectPokemonDirective(pokemon__)"  pkmonappBorderCard="green">
+           <div class="card horizontal" (click)="goToDetailPokemons(pokemon__)"  pkmonappBorderCard="green">
                 
                <div class="card-image">
                     <img src={{pokemon__.picture}} />
